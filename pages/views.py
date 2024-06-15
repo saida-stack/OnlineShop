@@ -1,22 +1,13 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
 
-def home(request):
-    context = {
-        'page_title': 'Home Page'
-    }
-    return render(request, 'pages/home.html', context)
+class HomePageView(TemplateView):
+    template_name = 'pages/home.html'
 
 
-def about(request):
-    context = {
-        'page_title': 'About Us'
-    }
-    return render(request, 'pages/about.html', context)
+class AboutPageView(TemplateView):
+    template_name = 'pages/about.html'
 
 
-def contact(request):
-    context = {
-        'page_title': 'Contact Us'
-    }
-    return render(request, 'pages/contact.html', context)
+class ContactPageView(TemplateView):
+    template_name = 'pages/contact.html'
